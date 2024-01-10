@@ -12,6 +12,7 @@ type CartMainProps = {
 };
 
 export function CartMain({layout, cart}: CartMainProps) {
+  console.log('CartMain', cart);
   const linesCount = Boolean(cart?.lines?.nodes?.length || 0);
   const withDiscount =
     cart &&
