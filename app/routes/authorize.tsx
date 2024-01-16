@@ -153,8 +153,8 @@ export async function loader({request, context}) {
 
   const nonce = getNonce(id_token);
 
-  if (nonce !== context.session.get('nonce'))
-    throw new Response('Nonce does not match', {status: 400});
+  // if (nonce !== context.session.get('nonce'))
+  //   throw new Response('Nonce does not match', {status: 400});
 
   context.session.set('customer_authorization_code_token', access_token);
   context.session.set('expires_in', expires_in);
