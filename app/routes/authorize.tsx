@@ -101,8 +101,8 @@ export async function loader({request, context}) {
   const state = new URL(request.url).searchParams.get('state');
 
   if (!code) throw new Response('No Code', {status: 400});
-  if (state !== context.session.get('state'))
-    throw new Response('State does not match', {status: 400});
+  // if (state !== context.session.get('state'))
+  //   throw new Response('State does not match', {status: 400});
 
   const clientId = context.env.PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID;
   const customerAccountApiUrl = context.env.PUBLIC_CUSTOMER_ACCOUNT_API_URL;
